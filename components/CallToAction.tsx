@@ -159,7 +159,7 @@ export function CallToAction() {
                   minWidth: "150px",
                 }}
               >
-                Discover Loom
+                Discover Wovio
               </Button>
             </Box>
           )}
