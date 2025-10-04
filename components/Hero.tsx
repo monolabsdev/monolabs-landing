@@ -53,7 +53,7 @@ export const Hero: React.FC = () => {
             mt: 3,
           }}
         >
-          Loom creates digital and physical experiences designed to reduce
+          Wovio creates digital and physical experiences designed to reduce
           clutter and bring focus.
         </Typography>
 
@@ -69,7 +69,7 @@ export const Hero: React.FC = () => {
             minWidth: "150px",
           }}
         >
-          Discover Loom
+          Discover Wovio
         </Button>
       </motion.div>
     </Box>

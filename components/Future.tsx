@@ -73,7 +73,7 @@ export function Future() {
                 color: "text.secondary",
               }}
             >
-              Soon, Loom will extend beyond the digital — into the objects you
+              Soon, Wovio will extend beyond the digital — into the objects you
               touch every day.
             </Typography>
           </ParallaxText>
