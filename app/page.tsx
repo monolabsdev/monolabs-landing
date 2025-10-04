@@ -1,27 +1,36 @@
 "use client";
 
-import { Hero } from "../components/Hero";
-import { Box, Stack, Typography } from "@mui/material";
+import { Stack } from "@mui/material";
+import { Hero } from "@/components/Hero";
+import { Philosophy } from "@/components/Philosophy";
+import { Products } from "@/components/Products";
+import { FadeIn, ScaleOnScroll } from "@/components/AnimationProvider";
+import { Future } from "@/components/Future";
+import { CallToAction } from "@/components/CallToAction";
+import { ScrollIndicator } from "@/components/ScrollIndicator";
 
 export default function Home() {
   return (
-    <Box>
-      <Box
-        minHeight="100vh"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        p={2}
-        sx={{ fontWeight: 100 }}
-      >
+    <Stack
+      component="main"
+      direction="column"
+      sx={{
+        bgcolor: "background.default",
+        color: "text.primary",
+        fontWeight: 100,
+        overflowX: "hidden",
+      }}
+    >
+      <ScrollIndicator />
+      <FadeIn delay={0.2} direction="up">
         <Hero />
-      </Box>
-      <Box id="about" p={4} sx={{}}>
-        <Typography sx={{ textAlign: "center" }} variant="h3">
-          Curated Experiences
-        </Typography>
-        <Stack direction={"row"} spacing={2} mt={2} mx="auto"></Stack>
-      </Box>
-    </Box>
+      </FadeIn>
+      <Philosophy />
+      <ScaleOnScroll scaleStart={0.8} scaleEnd={1}>
+        <Products />
+      </ScaleOnScroll>
+      <Future />
+      <CallToAction />
+    </Stack>
   );
 }
