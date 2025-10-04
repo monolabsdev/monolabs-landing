@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import theme from "./theme";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Loom - Simplicity, Woven.",
@@ -16,6 +17,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+          <Analytics />
           {children}
         </ThemeProvider>
       </body>
