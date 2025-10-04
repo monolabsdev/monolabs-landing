@@ -5,8 +5,8 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
-  title: "Loom - Simplicity, Woven.",
-  description: "Loom - Simplicity, Woven",
+  title: "Wovio - Simplicity, Woven.",
+  description: "Wovio - Simplicity, Woven",
 };
 
 export default function RootLayout({

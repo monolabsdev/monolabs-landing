@@ -180,7 +180,7 @@ export function CallToAction() {
                 color: "rgba(255,255,255,0.25)",
               }}
             >
-              © 2025 LOOM. ALL RIGHTS RESERVED.
+              © 2025 WOVIO. ALL RIGHTS RESERVED.
             </Typography>
           </Box>
         </Box>
