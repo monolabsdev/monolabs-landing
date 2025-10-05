@@ -79,7 +79,7 @@ export default function AboutLexa() {
           </Link> */}
 
           <Link href="/">
-            <Button variant="outlined">Back to Loom</Button>
+            <Button variant="outlined">Back to Wovio</Button>
           </Link>
         </Stack>
       </motion.div>

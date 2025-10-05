@@ -8,8 +8,10 @@ import {
   TextField,
   Button,
   Fade,
+  IconButton,
 } from "@mui/material";
 import { KeyboardArrowRight } from "@mui/icons-material";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 export function CallToAction() {
   const [email, setEmail] = useState("");
@@ -172,6 +174,23 @@ export function CallToAction() {
               borderTop: "1px solid rgba(255,255,255,0.1)",
             }}
           >
+            <IconButton
+              component="a"
+              href="https://github.com/Wovio"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                mb: 4,
+                color: "rgba(255,255,255,0.25)",
+                transition: "color 0.3s ease",
+                "&:hover": {
+                  color: "rgba(255,255,255,0.6)",
+                },
+              }}
+            >
+              <GitHubIcon fontSize="medium" />
+            </IconButton>
+
             <Typography
               sx={{
                 fontSize: "0.875rem",
