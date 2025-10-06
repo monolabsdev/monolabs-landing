@@ -14,10 +14,10 @@ import Link from "next/link";
 
 const products = [
   {
-    name: "Lexa",
+    name: "Vocab App (name tbd)",
     description:
       "A minimalist vocabulary builder that helps you learn and retain new words.",
-    link: "/products/lexa", // Add your actual routes here
+    link: "/products/vocab", // Add your actual routes here
     disabled: false,
   },
   {

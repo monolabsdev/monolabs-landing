@@ -4,7 +4,7 @@ import { Box, Typography, Button, Stack, Chip } from "@mui/material";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function AboutLexa() {
+export default function AboutVocab() {
   return (
     <Box
       component="section"
@@ -51,7 +51,7 @@ export default function AboutLexa() {
         >
           About{" "}
           <Box component="span" sx={{ fontWeight: 300 }}>
-            Lexa
+            Vocab App (name tbd)
           </Box>
         </Typography>
 
@@ -64,9 +64,9 @@ export default function AboutLexa() {
             fontSize: { xs: "1rem", md: "1.125rem" },
           }}
         >
-          Lexa is a minimalist vocabulary learning app designed to help you
-          focus on the words that matter most. No distractions, no clutter —
-          just efficient, bite-sized learning that fits into your day.
+          Vocab app (name tbd) is a minimalist vocabulary learning app designed
+          to help you focus on the words that matter most. No distractions, no
+          clutter — just efficient, bite-sized learning that fits into your day.
           <br />
           <br />
           Build a strong vocabulary while spending less time memorizing and more
