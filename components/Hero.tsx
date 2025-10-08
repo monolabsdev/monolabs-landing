@@ -53,7 +53,7 @@ export const Hero: React.FC = () => {
             mt: 3,
           }}
         >
-          Wovio creates digital and physical experiences designed to reduce
+          Mono creates digital and physical experiences designed to reduce
           clutter and bring focus.
         </Typography>
 
@@ -69,7 +69,7 @@ export const Hero: React.FC = () => {
             minWidth: "150px",
           }}
         >
-          Discover Wovio
+          Discover Mono
         </Button>
       </motion.div>
     </Box>

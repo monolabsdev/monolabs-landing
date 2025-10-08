@@ -161,7 +161,7 @@ export function CallToAction() {
                   minWidth: "150px",
                 }}
               >
-                Discover Wovio
+                Discover Mono
               </Button>
             </Box>
           )}
@@ -176,7 +176,7 @@ export function CallToAction() {
           >
             <IconButton
               component="a"
-              href="https://github.com/Wovio"
+              href="https://github.com/monolabsdev"
               target="_blank"
               rel="noopener noreferrer"
               sx={{
@@ -199,7 +199,7 @@ export function CallToAction() {
                 color: "rgba(255,255,255,0.25)",
               }}
             >
-              © 2025 WOVIO. ALL RIGHTS RESERVED.
+              © 2025 MONOLABS. ALL RIGHTS RESERVED.
             </Typography>
           </Box>
         </Box>
