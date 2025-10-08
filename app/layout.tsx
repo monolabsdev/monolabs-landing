@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ClientWrapper from "./ClientWrapper"; // we'll create this
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import theme from "./theme";
 import "./globals.css";
@@ -18,7 +19,7 @@ export default function RootLayout({
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Analytics />
-          {children}
+          <ClientWrapper>{children}</ClientWrapper>
         </ThemeProvider>
       </body>
     </html>
