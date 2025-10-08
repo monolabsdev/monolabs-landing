@@ -17,7 +17,7 @@ const products = [
     name: "Vocab App (name tbd)",
     description:
       "A minimalist vocabulary builder that helps you learn and retain new words.",
-    link: "/products/vocab", // Add your actual routes here
+    link: "/products/vocab",
     disabled: false,
   },
   {
@@ -64,7 +64,7 @@ export function Products() {
               fontSize: { xs: "2.25rem", md: "3rem", lg: "3.5rem" },
             }}
           >
-            Products that help you do less,
+            Apps that help you do less,
             <Box component="span" sx={{ color: "text.primary" }}>
               {" "}
               beautifully.
