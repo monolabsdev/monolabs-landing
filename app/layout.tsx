@@ -15,6 +15,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <meta
+        name="google-site-verification"
+        content="00tJU0St__ZYIm1X1eljrVi2yo6OTnjz0KXIczQXmos"
+      />
       <body>
         <ThemeProvider theme={theme}>
           <CssBaseline />
