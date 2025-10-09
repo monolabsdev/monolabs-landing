@@ -79,7 +79,7 @@ export default function AboutVocab() {
           </Link> */}
 
           <Link href="/">
-            <Button variant="outlined">Back to Wovio</Button>
+            <Button variant="outlined">Back to Mono</Button>
           </Link>
         </Stack>
       </motion.div>
