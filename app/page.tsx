@@ -8,7 +8,8 @@ import { FadeIn, ScaleOnScroll } from "@/components/AnimationProvider";
 import { Future } from "@/components/Future";
 import { CallToAction } from "@/components/CallToAction";
 import { ScrollIndicator } from "@/components/ScrollIndicator";
-
+import { Process } from "@/components/Process";
+import { EstimatorCTA } from "@/components/EstimatorCTA";
 export default function Home() {
   return (
     <>
@@ -27,14 +28,24 @@ export default function Home() {
         }}
       >
         <ScrollIndicator />
-        <FadeIn delay={0.2} direction="up">
+
+        <FadeIn delay={0.15} direction="up">
           <Hero />
         </FadeIn>
+
         <Philosophy />
-        <ScaleOnScroll scaleStart={0.8} scaleEnd={1}>
+
+        <ScaleOnScroll scaleStart={0.9} scaleEnd={1}>
           <Products />
         </ScaleOnScroll>
+
+        <Process />
+
+        <EstimatorCTA />
+
+        {/* Keep this if you still want “Future” positioning. Otherwise delete it. */}
         <Future />
+
         <CallToAction />
       </Stack>
     </>

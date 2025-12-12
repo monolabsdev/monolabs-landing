@@ -7,32 +7,28 @@ import {
   Typography,
   Card,
   CardContent,
-  Button,
+  Chip,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import Link from "next/link";
 
-const products = [
+const services = [
   {
-    name: "Vocab App (name tbd)",
+    title: "Marketing Websites",
     description:
-      "A minimalist vocabulary builder that helps you learn and retain new words.",
-    link: "/products/vocab",
-    disabled: false,
+      "Fast, crisp, conversion-focused sites with modern performance and clean CMS editing.",
+    chips: ["Next.js", "SEO", "Analytics", "CMS"],
   },
   {
-    name: "Clarity",
+    title: "Web Apps & Dashboards",
     description:
-      "A note-taking app with zero distractions — just your thoughts, beautifully presented.",
-    link: "/products/clarity",
-    disabled: true,
+      "Auth, data views, dashboards, admin panels, and product flows built for scale.",
+    chips: ["Auth", "DB", "APIs", "Stripe-ready"],
   },
   {
-    name: "Breathe",
+    title: "Design → Build",
     description:
-      "A guided breathing tool for reclaiming quiet moments during busy days.",
-    link: "/products/breathe",
-    disabled: true,
+      "UI implementation that actually matches the design. No “close enough” handoffs.",
+    chips: ["Design systems", "Responsive", "Polish"],
   },
 ];
 
@@ -47,7 +43,7 @@ export function Products() {
         alignItems: "center",
         justifyContent: "center",
         px: 6,
-        py: { xs: 8, md: 16, lg: 32 },
+        py: { xs: 8, md: 16, lg: 26 },
         overflow: "hidden",
         bgcolor: "background.default",
       }}
@@ -58,29 +54,43 @@ export function Products() {
             variant="h3"
             align="center"
             sx={{
-              mb: { xs: 8, md: 12 },
+              mb: { xs: 6, md: 10 },
               fontWeight: 100,
               color: "text.primary",
-              fontSize: { xs: "2.25rem", md: "3rem", lg: "3.5rem" },
+              fontSize: { xs: "2.1rem", md: "2.9rem", lg: "3.25rem" },
+              letterSpacing: "-0.02em",
             }}
           >
-            Apps that help you do less,
-            <Box component="span" sx={{ color: "text.primary" }}>
-              {" "}
-              beautifully.
-            </Box>
+            What we build
           </Typography>
 
-          <Grid container spacing={6} justifyContent="center">
-            {products.map((product, index) => (
-              <Grid size={{ xs: 12, md: 4 }} key={product.name}>
+          <Typography
+            align="center"
+            sx={{
+              maxWidth: "52rem",
+              mx: "auto",
+              mb: { xs: 6, md: 10 },
+              color: "text.secondary",
+              fontWeight: 200,
+              lineHeight: 1.7,
+              opacity: 0.9,
+            }}
+          >
+            Product-first websites and web apps for startups and small teams who
+            want speed, clarity, and a build that doesn’t fall apart after month
+            two.
+          </Typography>
+
+          <Grid container spacing={4} justifyContent="center">
+            {services.map((s, index) => (
+              <Grid size={{ xs: 12, md: 4 }} key={s.title}>
                 <motion.div
-                  initial={{ opacity: 0, y: 50 }}
+                  initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{
-                    duration: 0.8,
-                    delay: index * 0.2,
+                    duration: 0.7,
+                    delay: index * 0.12,
                     ease: "easeOut",
                   }}
                 >
@@ -92,59 +102,47 @@ export function Products() {
                       bgcolor: "background.paper",
                       borderColor: "rgba(255,255,255,0.1)",
                       p: 3,
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "space-between",
-                      transition: "all 0.3s ease",
+                      transition: "all 0.25s ease",
                       "&:hover": {
-                        borderColor: "rgba(255,255,255,0.3)",
-                        transform: "translateY(-4px)",
+                        borderColor: "rgba(255,255,255,0.25)",
+                        transform: "translateY(-3px)",
                       },
                     }}
                   >
-                    <CardContent sx={{ flexGrow: 1 }}>
+                    <CardContent>
                       <Typography
                         variant="h5"
-                        sx={{
-                          fontWeight: 300,
-                          mb: 1,
-                          color: "text.primary",
-                        }}
+                        sx={{ fontWeight: 250, mb: 1, color: "text.primary" }}
                       >
-                        {product.name}
+                        {s.title}
                       </Typography>
+
                       <Typography
                         variant="body2"
                         sx={{
                           color: "text.secondary",
-                          lineHeight: 1.6,
+                          lineHeight: 1.65,
+                          mb: 2,
                         }}
                       >
-                        {product.description}
+                        {s.description}
                       </Typography>
+
+                      <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+                        {s.chips.map((c) => (
+                          <Chip
+                            key={c}
+                            label={c}
+                            variant="outlined"
+                            sx={{
+                              borderColor: "rgba(255,255,255,0.15)",
+                              color: "text.secondary",
+                              fontWeight: 200,
+                            }}
+                          />
+                        ))}
+                      </Box>
                     </CardContent>
-                    <Box textAlign="center">
-                      {product.disabled ? (
-                        <Button
-                          variant="contained"
-                          color="primary"
-                          sx={{ mt: 2 }}
-                          disabled
-                        >
-                          Learn More
-                        </Button>
-                      ) : (
-                        <Link href={product.link} passHref>
-                          <Button
-                            variant="contained"
-                            color="primary"
-                            sx={{ mt: 2 }}
-                          >
-                            Learn More
-                          </Button>
-                        </Link>
-                      )}
-                    </Box>
                   </Card>
                 </motion.div>
               </Grid>
