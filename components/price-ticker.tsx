@@ -2,11 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { Typography } from "@mui/material";
+import { SxProps, Theme } from "@mui/material/styles";
 
 interface PriceTickerProps {
   value: number;
   duration?: number;
-  sx?: any;
+  sx?: SxProps<Theme>;
 }
 
 export function PriceTicker({ value, duration = 600, sx }: PriceTickerProps) {
@@ -25,7 +26,6 @@ export function PriceTicker({ value, duration = 600, sx }: PriceTickerProps) {
       const elapsed = Date.now() - startTime;
       const progress = Math.min(elapsed / duration, 1);
 
-      // Easing function for smooth animation
       const easeOutCubic = 1 - Math.pow(1 - progress, 3);
       const currentValue = Math.round(startValue + difference * easeOutCubic);
 

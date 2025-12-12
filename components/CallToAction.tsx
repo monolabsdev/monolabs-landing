@@ -20,7 +20,7 @@ export function CallToAction() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!name || !email) return;
 
@@ -43,8 +43,19 @@ export function CallToAction() {
         }),
       });
 
-      const data = await res.json();
-      if (!res.ok) throw new Error(data?.error || "Request failed");
+      const data: unknown = await res.json();
+
+      if (!res.ok) {
+        const errorMessage =
+          typeof data === "object" &&
+          data !== null &&
+          "error" in data &&
+          typeof (data as { error: unknown }).error === "string"
+            ? (data as { error: string }).error
+            : "Request failed";
+
+        throw new Error(errorMessage);
+      }
 
       setIsSubmitted(true);
       setName("");
@@ -52,8 +63,8 @@ export function CallToAction() {
       setNote("");
 
       setTimeout(() => setIsSubmitted(false), 3500);
-    } catch (err: any) {
-      alert(err?.message || "Something went wrong");
+    } catch (err: unknown) {
+      alert(err instanceof Error ? err.message : "Something went wrong");
     } finally {
       setLoading(false);
     }
